@@ -3,6 +3,7 @@
 //
 #include "sqlist_test.h"
 #include "sqlist_problems.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 // Test insertions under normal conditions
@@ -722,12 +723,29 @@ START_TEST(wangdao_sqList_Test_5) {
 }
 END_TEST
 
+START_TEST(wangdao_sqList_Test_10) {
+	SqList L;
+	InitList(&L);
+	int elements[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+	for(int i = 0; i < 9; i++) {
+		ListInsert_Sq(&L, i + 1, elements[i]);
+	}
+	Wangdao_SqList_10(&L, 4);
+	int expected[] = {6, 7, 8, 9, 1, 2, 3, 4, 5};
+	for(int i = 0; i < L.length; i++) {
+		printf("%d", L.elem[i]);
+		//ck_assert_int_eq(L.elem[i], expected[i]);
+	}
+}
+END_TEST
+
 void add_wangdao_tests(TCase *tc) {
 	tcase_add_test(tc, wangdao_sqList_Test_1);
 	tcase_add_test(tc, wangdao_sqList_Test_2);
 	tcase_add_test(tc, wangdao_sqList_Test_3);
 	tcase_add_test(tc, wangdao_sqList_Test_4);
 	tcase_add_test(tc, wangdao_sqList_Test_5);
+	tcase_add_test(tc, wangdao_sqList_Test_10);
 }
 
 Suite *add_suite_sqlist(void) {

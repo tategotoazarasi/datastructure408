@@ -36,5 +36,11 @@ void Wangdao_SqList_4(SqList *L, int s, int t);
  * @param L 顺序表
  */
 void Wangdao_SqList_5(SqList *L);
+/**
+ * 王道10. 将顺序表循环左移p个位置
+ * @param L 顺序表
+ * @param p 左移位数
+ */
+void Wangdao_SqList_10(SqList *L, int p);
 
 #endif//DATASTRUCTURE408_SQLIST_PROBLEMS_H

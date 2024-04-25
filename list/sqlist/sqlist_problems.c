@@ -88,3 +88,26 @@ void Wangdao_SqList_5(SqList *L) {
 	}
 	L->length -= deleted;
 }
+/**
+ * 王道10. 将顺序表循环左移p个位置
+ * @param L 顺序表
+ * @param p 左移位数
+ */
+void Wangdao_SqList_10(SqList *L, int p) {
+	int n     = L->length / p;
+	int first = 1;
+	for(int i = 0; i < p; i++) {
+		for(int j = 0; j < n + 1; j++) {
+			int current = (i + j * p) % L->length;
+			int tmp;
+			if(first) {
+				tmp   = L->elem[current];
+				first = 0;
+			} else {
+				int tmp2         = L->elem[current];
+				L->elem[current] = tmp;
+				tmp              = tmp2;
+			}
+		}
+	}
+}

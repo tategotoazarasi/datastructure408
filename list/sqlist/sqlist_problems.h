@@ -49,5 +49,13 @@ void Wangdao_SqList_10(SqList *L, int p);
  * @return 中位数
  */
 int Wangdao_SqList_11(SqList *L1, SqList *L2);
+/**
+ * 王道14. 计算并返回三个有序顺序表的元素之间的最小距离
+ * @param L1 顺序表1
+ * @param L2 顺序表2
+ * @param L3 顺序表3
+ * @return 最小距离
+ */
+int Wangdao_SqList_14(SqList *L1, SqList *L2, SqList *L3);
 
 #endif//DATASTRUCTURE408_SQLIST_PROBLEMS_H

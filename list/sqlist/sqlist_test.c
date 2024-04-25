@@ -754,6 +754,28 @@ START_TEST(wangdao_sqList_Test_11) {
 }
 END_TEST
 
+START_TEST(wangdao_sqList_Test_14) {
+	SqList L1, L2, L3;
+	InitList(&L1);
+	InitList(&L2);
+	InitList(&L3);
+	int elements1[] = {-1, 0, 9};
+	int elements2[] = {-25, -10, 10, 11};
+	int elements3[] = {2, 9, 17, 30, 41};
+	for(int i = 0; i < 3; i++) {
+		ListInsert_Sq(&L1, i + 1, elements1[i]);
+	}
+	for(int i = 0; i < 4; i++) {
+		ListInsert_Sq(&L2, i + 1, elements2[i]);
+	}
+	for(int i = 0; i < 5; i++) {
+		ListInsert_Sq(&L3, i + 1, elements3[i]);
+	}
+	int ans = Wangdao_SqList_14(&L1, &L2, &L3);
+	ck_assert_int_eq(ans, 2);
+}
+END_TEST
+
 void add_wangdao_tests(TCase *tc) {
 	tcase_add_test(tc, wangdao_sqList_Test_1);
 	tcase_add_test(tc, wangdao_sqList_Test_2);
@@ -762,6 +784,7 @@ void add_wangdao_tests(TCase *tc) {
 	tcase_add_test(tc, wangdao_sqList_Test_5);
 	tcase_add_test(tc, wangdao_sqList_Test_10);
 	tcase_add_test(tc, wangdao_sqList_Test_11);
+	tcase_add_test(tc, wangdao_sqList_Test_14);
 }
 
 Suite *add_suite_sqlist(void) {

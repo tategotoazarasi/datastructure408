@@ -136,3 +136,28 @@ int Wangdao_SqList_11(SqList *L1, SqList *L2) {
 		return L2->elem[j];
 	}
 }
+/**
+ * 王道14. 计算并返回三个有序顺序表的元素之间的最小距离
+ * @param L1 顺序表1
+ * @param L2 顺序表2
+ * @param L3 顺序表3
+ * @return 最小距离
+ */
+int Wangdao_SqList_14(SqList *L1, SqList *L2, SqList *L3) {
+	int i = 0, j = 0, k = 0;
+	int min = abs(L1->elem[i] - L2->elem[j]) + abs(L2->elem[j] - L3->elem[k]) + abs(L1->elem[i] - L3->elem[k]);
+	while(i < L1->length && j < L2->length && k < L3->length) {
+		int D = abs(L1->elem[i] - L2->elem[j]) + abs(L2->elem[j] - L3->elem[k]) + abs(L1->elem[i] - L3->elem[k]);
+		if(D < min) {
+			min = D;
+		}
+		if(i <= j && i <= k) {
+			i++;
+		} else if(j <= i && j <= k) {
+			j++;
+		} else {
+			k++;
+		}
+	}
+	return min;
+}

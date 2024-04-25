@@ -8,7 +8,8 @@
 #define LIST_INIT_SIZE 100///< 线性表存储空间的初始分配量
 #define LISTINCREMENT 10  ///< 线性表存储空间的分配增量
 
-#include "../global.h"
+#include "../../global.h"
+#include <check.h>
 /**
  * 顺序表的抽象数据类型
  */
@@ -105,5 +106,6 @@ void NextElem_Sq(SqList *L, const int *cur_e, int *next_e);
  */
 void ListTraverse_Sq(SqList *L, void (*visit)(int *));
 
+Suite *add_suite(void);
 
 #endif//DATASTRUCTURE408_SQLIST_H

@@ -24,5 +24,12 @@ void Wangdao_SqList_2(SqList *L);
  * @param x 要删除的元素
  */
 void Wangdao_SqList_3(SqList *L, int x);
+/**
+ * 王道04. 删除顺序表中所有值在给定范围[s,t]之间的元素
+ * @param L 顺序表
+ * @param s 范围起始
+ * @param t 范围终止
+ */
+void Wangdao_SqList_4(SqList *L, int s, int t);
 
 #endif//DATASTRUCTURE408_SQLIST_PROBLEMS_H

@@ -24,3 +24,16 @@ int Wangdao_SqList_1(SqList *L) {
 	L->length--;
 	return min_v;
 }
+/**
+ * 王道02. 将一个顺序表的所有元素逆置
+ * @param L 顺序表
+ */
+void Wangdao_SqList_2(SqList *L) {
+	int i = 0;
+	int j = L->length - 1;
+	for(; i < j; i++, j--) {
+		int temp   = L->elem[i];
+		L->elem[i] = L->elem[j];
+		L->elem[j] = temp;
+	}
+}

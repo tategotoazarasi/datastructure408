@@ -675,6 +675,22 @@ START_TEST(wangdao_sqList_Test_2) {
 		ck_assert_int_eq(L.elem[i], expected[i]);
 	}
 }
+END_TEST
+
+START_TEST(wangdao_sqList_Test_3) {
+	SqList L;
+	InitList(&L);
+	int elements[] = {1, 2, 3, 4, 5, 3, 2, 1};
+	for(int i = 0; i < 8; i++) {
+		ListInsert_Sq(&L, i + 1, elements[i]);
+	}
+	Wangdao_SqList_3(&L, 3);
+	int expected[] = {1, 2, 4, 5, 2, 1};
+	for(int i = 0; i < L.length; i++) {
+		ck_assert_int_eq(L.elem[i], expected[i]);
+	}
+}
+END_TEST
 
 void add_wangdao_tests(TCase *tc) {
 	tcase_add_test(tc, wangdao_sqList_Test_1);

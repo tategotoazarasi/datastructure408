@@ -18,5 +18,11 @@ int Wangdao_SqList_1(SqList *L);
  * @param L 顺序表
  */
 void Wangdao_SqList_2(SqList *L);
+/**
+ * 王道03. 删除顺序表中所有值为x的元素
+ * @param L 顺序表
+ * @param x 要删除的元素
+ */
+void Wangdao_SqList_3(SqList *L, int x);
 
 #endif//DATASTRUCTURE408_SQLIST_PROBLEMS_H

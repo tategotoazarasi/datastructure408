@@ -37,3 +37,20 @@ void Wangdao_SqList_2(SqList *L) {
 		L->elem[j] = temp;
 	}
 }
+/**
+ * 王道03. 删除顺序表中所有值为x的元素
+ * @param L 顺序表
+ * @param x 要删除的元素
+ */
+void Wangdao_SqList_3(SqList *L, int x) {
+	int j       = 0;
+	int deleted = 0;
+	for(int i = 0; i < L->length; i++) {
+		if(L->elem[i] != x) {
+			L->elem[j++] = L->elem[i];
+		} else {
+			deleted++;
+		}
+	}
+	L->length -= deleted;
+}

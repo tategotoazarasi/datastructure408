@@ -21,28 +21,9 @@ void add_prior_next_elem_tests(TCase *tc);
 void add_list_traverse_tests(TCase *tc);
 void add_combination_tests(TCase *tc);
 
-Suite *add_suite(void) {
-	Suite *s;
-	TCase *tc_core;
+void add_wangdao_tests(TCase *tc);
 
-	s       = suite_create("TestSuite_SqList");// 创建测试套件
-	tc_core = tcase_create("Core");            // 创建核心测试用例组
-
-	// 添加测试用例到测试组
-	add_init_tests(tc_core);
-	add_list_insert_tests(tc_core);
-	add_list_delete_tests(tc_core);
-	add_locate_elem_tests(tc_core);
-	add_merge_list_tests(tc_core);
-	add_list_management_tests(tc_core);
-	add_get_elem_tests(tc_core);
-	add_prior_next_elem_tests(tc_core);
-	add_list_traverse_tests(tc_core);
-	add_combination_tests(tc_core);
-	suite_add_tcase(s, tc_core);// 将测试用例组加入到套件
-
-	return s;
-}
+Suite *add_suite_sqlist(void);
 
 
 #endif//DATASTRUCTURE408_SQLIST_TEST_H

@@ -11,7 +11,9 @@ add_executable(datastructure408 main.c
         list/sqlist/sqlist.h
         list/sqlist/sqlist.c
         list/sqlist/sqlist_test.h
-        list/sqlist/sqlist_test.c)
+        list/sqlist/sqlist_test.c
+        list/sqlist/sqlist_problems.h
+        list/sqlist/sqlist_problems.c)
 
 # 链接Check库到测试可执行文件
 target_link_libraries(datastructure408 ${CHECK_LIBRARY})

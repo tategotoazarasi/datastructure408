@@ -106,6 +106,4 @@ void NextElem_Sq(SqList *L, const int *cur_e, int *next_e);
  */
 void ListTraverse_Sq(SqList *L, void (*visit)(int *));
 
-Suite *add_suite(void);
-
 #endif//DATASTRUCTURE408_SQLIST_H

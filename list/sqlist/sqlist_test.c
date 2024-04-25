@@ -2,6 +2,7 @@
 // Created by tategotoazarasi on 24-4-25.
 //
 #include "sqlist_test.h"
+#include "sqlist_problems.h"
 #include <stdlib.h>
 
 // Test insertions under normal conditions
@@ -642,4 +643,51 @@ void add_combination_tests(TCase *tc) {
 	tcase_add_test(tc, test_Init_Insert);
 	tcase_add_test(tc, test_Insert_Delete);
 	tcase_add_test(tc, test_MergeLists);
+}
+
+START_TEST(wangdao_sqList_Test_1) {
+	SqList L;
+	InitList(&L);
+	int elements[] = {1, 0, 3, 4, 6};
+	for(int i = 0; i < 5; i++) {
+		ListInsert_Sq(&L, i + 1, elements[i]);
+	}
+	int ans = Wangdao_SqList_1(&L);
+	ck_assert_int_eq(ans, 0);
+	ck_assert_int_eq(L.length, 4);
+	int expected[] = {1, 6, 3, 4};
+	for(int i = 0; i < L.length; i++) {
+		ck_assert_int_eq(L.elem[i], expected[i]);
+	}
+}
+END_TEST
+
+void add_wangdao_tests(TCase *tc) {
+	tcase_add_test(tc, wangdao_sqList_Test_1);
+}
+
+Suite *add_suite_sqlist(void) {
+	Suite *s;
+	TCase *tc_core;
+
+	s       = suite_create("TestSuite_SqList");// 创建测试套件
+	tc_core = tcase_create("Core");            // 创建核心测试用例组
+
+	// 添加测试用例到测试组
+	add_init_tests(tc_core);
+	add_list_insert_tests(tc_core);
+	add_list_delete_tests(tc_core);
+	add_locate_elem_tests(tc_core);
+	add_merge_list_tests(tc_core);
+	add_list_management_tests(tc_core);
+	add_get_elem_tests(tc_core);
+	add_prior_next_elem_tests(tc_core);
+	add_list_traverse_tests(tc_core);
+	add_combination_tests(tc_core);
+
+	add_wangdao_tests(tc_core);
+
+	suite_add_tcase(s, tc_core);// 将测试用例组加入到套件
+
+	return s;
 }

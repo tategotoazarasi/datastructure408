@@ -1,4 +1,4 @@
-#include "list/sqlist/sqlist.h"
+#include "list/sqlist/sqlist_test.h"
 #include <check.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,7 +8,7 @@ int main(void) {
 	Suite *s;
 	SRunner *sr;
 
-	s  = add_suite();
+	s  = add_suite_sqlist();
 	sr = srunner_create(s);
 
 	srunner_run_all(sr, CK_NORMAL);

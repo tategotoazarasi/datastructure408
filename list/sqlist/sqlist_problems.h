@@ -42,5 +42,12 @@ void Wangdao_SqList_5(SqList *L);
  * @param p 左移位数
  */
 void Wangdao_SqList_10(SqList *L, int p);
+/**
+ * 王道11. 找出两个有序顺序表的中位数
+ * @param L1 顺序表1
+ * @param L2 顺序表2
+ * @return 中位数
+ */
+int Wangdao_SqList_11(SqList *L1, SqList *L2);
 
 #endif//DATASTRUCTURE408_SQLIST_PROBLEMS_H

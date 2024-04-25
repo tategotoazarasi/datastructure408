@@ -111,3 +111,28 @@ void Wangdao_SqList_10(SqList *L, int p) {
 		}
 	}
 }
+/**
+ * 王道11. 找出两个有序顺序表的中位数
+ * @param L1 顺序表1
+ * @param L2 顺序表2
+ * @return 中位数
+ */
+int Wangdao_SqList_11(SqList *L1, SqList *L2) {
+	int i = 0, j = 0;
+	for(int k = 1; k < (L1->length + L2->length + 1) / 2; k++) {
+		if(L1->elem[i] < L2->elem[j]) {
+			i++;
+		} else {
+			j++;
+		}
+	}
+	if(i == L1->length) {
+		return L2->elem[j];
+	} else if(j == L2->length) {
+		return L1->elem[i];
+	} else if(L1->elem[i] < L2->elem[j]) {
+		return L1->elem[i];
+	} else {
+		return L2->elem[j];
+	}
+}

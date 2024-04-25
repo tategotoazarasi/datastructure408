@@ -75,3 +75,16 @@ void Wangdao_SqList_4(SqList *L, int s, int t) {
 	}
 	L->length -= deleted;
 }
+
+void Wangdao_SqList_5(SqList *L) {
+	int j       = 0;
+	int deleted = 0;
+	for(int i = 0; i < L->length; i++, j++) {
+		while(i + 1 < L->length && L->elem[i] == L->elem[i + 1]) {
+			deleted++;
+			i++;
+			L->elem[j] = L->elem[i];
+		}
+	}
+	L->length -= deleted;
+}

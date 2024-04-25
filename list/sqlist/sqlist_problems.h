@@ -31,5 +31,10 @@ void Wangdao_SqList_3(SqList *L, int x);
  * @param t 范围终止
  */
 void Wangdao_SqList_4(SqList *L, int s, int t);
+/**
+ * 王道05. 从有序顺序表中删除所有其值重复的元素，使表中所有元素的值均不同
+ * @param L 顺序表
+ */
+void Wangdao_SqList_5(SqList *L);
 
 #endif//DATASTRUCTURE408_SQLIST_PROBLEMS_H
